@@ -16,6 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Template path
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'annotate', 'frontend', 'build',)
+# Static path
+STATIC_DIR = os.path.join(BASE_DIR, 'annotate', 'frontend', 'build', 'static',)
 
 
 # Quick-start development settings - unsuitable for production
