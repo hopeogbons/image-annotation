@@ -3,7 +3,7 @@ import HeaderContainer from '../containers/HeaderContainer';
 import ImageListContainer from '../containers/ImageListContainer';
 import FooterContainer from '../containers/FooterContainer';
 
-export default class Login extends Component {
+export default class ImageList extends Component {
   render() {
     return (
       <div>
