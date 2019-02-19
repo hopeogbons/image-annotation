@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'annotate', 'frontend', 'build',)
 # Static path
 STATIC_DIR = os.path.join(BASE_DIR, 'annotate', 'frontend', 'build', 'static',)
+# Image path
+IMAGE_DIR = os.path.join(BASE_DIR, 'annotate', 'frontend', 'public',)
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +31,7 @@ SECRET_KEY = 'koei=sk6+9s7rg7*r7&u&nt89iwpsv*v=xtquvarrrc&_9r*a*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': 5432,
     },
     'sqlite3': {
@@ -135,5 +137,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    STATIC_DIR
+    STATIC_DIR,
+    IMAGE_DIR
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
