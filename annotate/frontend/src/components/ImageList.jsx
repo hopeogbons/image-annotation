@@ -15,6 +15,14 @@ export default class ImageList extends Component {
               <h4>{img.title}</h4>
               <h6>{img.desc}</h6>
               <p className="card-text"><span className="badge badge-pill badge-dark">{img.count_annotations}</span> Annotations</p>
+              <div className="d-flex justify-content-between align-items-center row">
+                <div className="btn-group col">
+                  <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Delete</button>
+                </div>
+                <span className="text-muted col">Channel <span className="badge badge-pill badge-warning">{img.id}</span></span>
+              </div>
             </div>
           </div>
         </div>
