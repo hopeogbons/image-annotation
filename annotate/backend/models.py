@@ -10,6 +10,9 @@ class Image(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     date_deleted = models.DateTimeField(blank=True, null=True)
 
+    def __str__(self):
+        return '({}) -> {}'.format(self.id, self.title)
+
 
 class Annotation(models.Model):
     image = models.ForeignKey(Image, related_name='annotations', on_delete=models.CASCADE)
@@ -17,3 +20,6 @@ class Annotation(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     date_deleted = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return '{} -> {}'.format(self.image, self.details)
