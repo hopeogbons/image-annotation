@@ -1,4 +1,6 @@
 import axios from 'axios';
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 // create
 export const CREATE_ANNOTATION_REQUEST = 'CREATE_ANNOTATION_REQUEST';
@@ -14,18 +16,22 @@ export const FETCH_ANNOTATION_RESET = 'FETCH_ANNOTATION_RESET';
 
 const ROOT_URL = 'http://localhost:8000/api/v1';
 
-export function createAnnotationRequest() {
+export function createAnnotationRequest(image_id, annotation) {
+  const {geometry, data} = annotation;
+  const json_data = {image: image_id, details: {geometry, data}};
+
   const payload = axios({
-    method: 'get',
+    method: 'post',
+    data: json_data,
     url: `${ROOT_URL}/annotations/`
   })
     .then(res => {
       const request = { loading: true };
       const {data, status} = res;
-      if (data && status === 200) {
+      if (data && status === 201) {
         request.data = data;
       } else {
-        request.error = 'Unable to create annotations at the moment. Please, try again later.';
+        request.error = 'Unable to create annotation at the moment. Please, try again later.';
       }
       return request
     })
@@ -57,10 +63,10 @@ export function createAnnotationReset() {
   };
 }
 
-export function fetchAnnotationRequest() {
+export function fetchAnnotationRequest(image_id) {
   const payload = axios({
     method: 'get',
-    url: `${ROOT_URL}/images/`
+    url: `${ROOT_URL}/annotations/?image=${image_id}`
   })
     .then(res => {
       const request = { loading: true };
