@@ -105,3 +105,4 @@ venv.bak/
 
 # Jetbrain ide
 .idea/
+.DS_Store
