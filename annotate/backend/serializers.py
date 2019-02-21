@@ -1,4 +1,4 @@
-from annotate.backend.models import Image
+from annotate.backend.models import Image, Annotation
 from rest_framework import serializers
 
 
@@ -17,5 +17,5 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class AnnotationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Image
+        model = Annotation
         fields = ('id', 'image', 'details', 'date_created', 'date_updated', 'date_deleted')
