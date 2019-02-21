@@ -4,10 +4,12 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import store, { history } from './store/configureStore';
+import configureStore, { history } from './store/configureStore';
 import './index.css';
 import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
+
+const store = configureStore({});
 
 render(
   <Provider store={ store }>
@@ -19,4 +21,4 @@ render(
 );
 
 
-serviceWorker.register();
+serviceWorker.unregister();
