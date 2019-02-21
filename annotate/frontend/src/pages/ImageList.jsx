@@ -7,9 +7,9 @@ export default class ImageList extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer status="is_logged_in"/>
-        <ImageListContainer/>
-        <FooterContainer/>
+        <HeaderContainer />
+        <ImageListContainer />
+        <FooterContainer />
       </div>
     );
   }
