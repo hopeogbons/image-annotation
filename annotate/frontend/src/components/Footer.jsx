@@ -4,9 +4,9 @@ import React from "react";
 export default class Footer extends Component {
 	render() {
     return (
-      <footer className="fixed-bottom bg-white">
+      <footer className="bottom bg-white">
         <hr/>
-        <div className="container"><p>&copy; Hope Ogbons</p></div>
+        <div className="container" style={{width: '1000px'}}><p>&copy; Hope Ogbons</p></div>
       </footer>
     );
 	}
