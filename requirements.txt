@@ -4,7 +4,7 @@ chardet==3.0.4
 Django==2.2.10
 django-cors-headers==2.4.0
 django-url-filter==0.3.12
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 enum-compat==0.0.2
 idna==2.8
 psycopg2-binary==2.7.7
