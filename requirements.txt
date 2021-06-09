@@ -1,7 +1,7 @@
 cached-property==1.5.1
 certifi==2018.11.29
 chardet==3.0.4
-Django==2.2.10
+Django==2.2.22
 django-cors-headers==2.4.0
 django-url-filter==0.3.12
 djangorestframework==3.9.1
